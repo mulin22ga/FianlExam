@@ -19,6 +19,7 @@ public class Main {
 		Main m = new Main();
 
 		try {
+
 			FileReader fr = new FileReader("menu.txt");
 			BufferedReader in = new BufferedReader(fr);
 			String line = in.readLine();
@@ -26,10 +27,10 @@ public class Main {
 			int count = Integer.parseInt(tokens[0]);
 
 			for (int i = 0; i < count; i++) {
-				String name = tokens[i * 2 + 1];
-				int price = Integer.parseInt(tokens[i * 2 + 2]);
-
-				m.food.add(new Food(i + 1, name, price));
+				int id = Integer.parseInt(tokens[0]);
+				String name = tokens[1];
+				int price = Integer.parseInt(tokens[2]);
+				m.food.add(new Food(id, name, price));
 
 			}
 			m.on();
@@ -37,5 +38,4 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
-
 }
